@@ -58,14 +58,13 @@
 \renewcommand{\thetable}{\theenumi}
 \section*{Question}
 
-Let x1\brak{t} and x2\brak{t} be two band-limited signals having bandwidth B = $4\pi\times10^3$
+Let $x_1\brak{t}$ and $x_2\brak{t}$ be two band-limited signals having bandwidth B = $4\pi\times10^3$
 rad/s each. In the figure below, the Nyquist sampling frequency, in
 rad/s, required to sample y\brak{t}, is
   \\
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\linewidth]{figure_final.pdf}
-    \caption{Enter Caption}
     \label{fig:enter-label}
 \end{figure}
 
@@ -82,8 +81,18 @@ rad/s, required to sample y\brak{t}, is
 
 \begin{table}[h]
     \centering
-   \input{\tables\table.tex}
-    \caption{Caption}
+    \begin{tabular}{|c|c|}
+    \hline
+        Symbol &Description \\
+        \hline
+        Y\brak{f}&y\brak{t} in frequency domain \\
+        \hline
+         $\omega_{m}$&Maximum frequency of Y\brak{f} \\
+         \hline
+         $\omega_{s}$&Nyquist sampling rate \\
+         \hline
+    \end{tabular}
+    \caption{Table of parameters}
     \label{tab:my_label}
 \end{table}
 \text{$x_{1}\brak{t}$ and $x_{2}\brak{t}$ in frequency domain ,}
@@ -109,7 +118,7 @@ rad/s, required to sample y\brak{t}, is
 \end{circuitikz}
  From figure ,
  \begin{align}
-     y\brak{t}=x_1\brak{t}cos\brak{12\pi\times10^3}+x_2\brak{t}cos\brak{4\pi\times10^3}
+     y\brak{t}=x_1\brak{t}cos\brak{12\pi\times10^3t}+x_2\brak{t}cos\brak{4\pi\times10^3t}
  \end{align}
 
  \begin{circuitikz}
