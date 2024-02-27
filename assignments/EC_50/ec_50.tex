@@ -1,0 +1,155 @@
+% \iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[beamer]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                         
+\usepackage{circuitikz}
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage[export]{adjustbox}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\begin{document}
+\parindent 0px
+\bibliographystyle{IEEEtran}
+
+\title{GATE 2023 - EC 50}
+\author{EE23BTECH11220 - R.V.S.S Varun$^{}$% <-this % stops a space
+}
+\maketitle
+\newpage
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\section*{Question}
+
+Let $x_1\brak{t}$ and $x_2\brak{t}$ be two band-limited signals having bandwidth B = $4\pi\times10^3$
+rad/s each. In the figure below, the Nyquist sampling frequency, in
+rad/s, required to sample y\brak{t}, is
+  \\
+  \vspace{20pt}
+\begin{figure}[h]
+    \centering
+	\begin{circuitikz}
+    \input{figs/ckt1.tex}
+	\end{circuitikz}
+    \label{fig:enter-label}
+\end{figure} 
+
+    \brak{a} $20\pi\times10^3$\\
+    \brak{b} $40\pi\times10^3$\\
+    \brak{c} $8\pi\times10^3$\\
+    \brak{d} $32\pi\times10^3$   \hfill(GATE EC 50)\\
+
+
+
+
+\section*{Solution}
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+    \hline
+        Symbol &Description \\
+        \hline
+        Y\brak{f}&y\brak{t} in frequency domain \\
+        \hline
+         $\omega_{m}$&Maximum frequency of Y\brak{f} \\
+         \hline
+         $\omega_{s}$&Nyquist sampling rate \\
+         \hline
+    \end{tabular}
+    \caption{Table of parameters}
+    \label{tab:my_label}
+\end{table}
+\text{$x_{1}\brak{t}$ and $x_{2}\brak{t}$ in frequency domain ,}
+\begin{circuitikz}
+    \draw[->] (-5,0) to (5,0);
+    \draw[->] (0,-1) to (0,5);
+    \draw (-3,0) to (0,3);
+    \draw (0,3) to (3,0);
+    \draw (-3,-0.5) node {$-4\pi\times10^3$};
+    \draw (3,-0.5) node {$4\pi\times10^3$};
+    \draw (0,5.5) node {$X_{1}\brak{f}$};
+
+\end{circuitikz}
+
+\begin{circuitikz}
+    \draw[->] (-5,0) to (5,0);
+    \draw[->] (0,-1) to (0,5);
+    \draw (-3,0) to (0,3);
+    \draw (0,3) to (3,0);
+    \draw (-3,-0.5) node {$-4\pi\times10^3$};
+    \draw (3,-0.5) node {$4\pi\times10^3$};
+    \draw (0,5.5) node {$X_{2}\brak{f}$};
+\end{circuitikz}
+ From figure ,
+ \begin{align}
+     y\brak{t}=x_1\brak{t}*cos\brak{4\pi\times10^3t}+x_2\brak{t}*cos\brak{12\pi\times10^3t}\\
+	 Y\brak{f}=X_1\brak{f}\pi[\delta\brak{2\pi f-4\pi\times10^3}+\delta\brak{2\pi f+4\pi\times10^3}]+\\
+	           X_2\brak{f}\pi[\delta\brak{2\pi f-12\pi\times10^3}+\delta\brak{2\pi f+12\pi\times10^3}]\nonumber
+\end{align}
+
+ \begin{circuitikz}
+    \draw[->] (-5,0) to (5,0);
+    \draw[->] (0,-1) to (0,5);
+    \draw (-4,0) to (-3,2);
+    \draw (-3,2) to (-2,0);
+    \draw (-2,0) to (-1,2);
+    \draw (-1,2) to (0,0);
+    \draw (0,0) to (1,2);
+    \draw (1,2) to (2,0);
+    \draw (2,0) to (3,2);
+    \draw (3,2) to (4,0);
+    \draw (-2,-0.5) node {$-8\pi\times10^3$};
+    \draw (2,-0.5) node {$8\pi\times10^3$};
+    \draw (4,-0.5) node {$16\pi\times10^3$};
+    \draw (-4,-0.5) node {$-16\pi\times10^3$};
+    \draw (0,5.5) node {$Y\brak{f}$};
+\end{circuitikz}
+\begin{center}
+    y\brak{t} in frequency domain
+\end{center}
+\begin{align}
+\omega_{m}=16\pi\times10^3 rad/sec.
+\end{align}
+\begin{align}
+\omega_{s}=2\omega_{m}=32\pi\times10^3 rad/sec.
+\end{align}
+\end{document}
