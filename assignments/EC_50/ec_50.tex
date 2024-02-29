@@ -25,7 +25,8 @@
 \usepackage{array}                                            
 \usepackage{longtable}                                       
 \usepackage{calc}                                             
-\usepackage{multirow}                                         
+\usepackage{multirow} 
+
 \usepackage{hhline}                                           
 \usepackage{ifthen}                                           
 \usepackage{lscape}
@@ -43,6 +44,8 @@
 \newcommand{\define}{\stackrel{\triangle}{=}}
 \theoremstyle{remark}
 \newtheorem{rem}{Remark}
+
+
 \begin{document}
 \parindent 0px
 \bibliographystyle{IEEEtran}
@@ -62,13 +65,13 @@ Let $x_1\brak{t}$ and $x_2\brak{t}$ be two band-limited signals having bandwidth
 rad/s each. In the figure below, the Nyquist sampling frequency, in
 rad/s, required to sample y\brak{t}, is
   \\
-  \vspace{20pt}
-\begin{figure}[h]
+  \vspace{25pt}
+\begin{figure}[ht]
     \centering
 	\begin{circuitikz}
     \input{figs/ckt1.tex}
 	\end{circuitikz}
-    \label{fig:enter-label}
+    \label{fig:EC50.1}
 \end{figure} 
 
     \brak{a} $20\pi\times10^3$\\
@@ -82,70 +85,75 @@ rad/s, required to sample y\brak{t}, is
 \section*{Solution}
 
 
-\begin{table}[h]
+\begin{table}[ht]
     \centering
-    \begin{tabular}{|c|c|}
-    \hline
-        Symbol &Description \\
-        \hline
-        Y\brak{f}&y\brak{t} in frequency domain \\
-        \hline
-         $\omega_{m}$&Maximum frequency of Y\brak{f} \\
-         \hline
-         $\omega_{s}$&Nyquist sampling rate \\
-         \hline
-    \end{tabular}
+    \input{tables/table.tex} 
     \caption{Table of parameters}
-    \label{tab:my_label}
+    \label{tab:EC50.1}
 \end{table}
-\text{$x_{1}\brak{t}$ and $x_{2}\brak{t}$ in frequency domain ,}
-\begin{circuitikz}
-    \draw[->] (-5,0) to (5,0);
-    \draw[->] (0,-1) to (0,5);
-    \draw (-3,0) to (0,3);
-    \draw (0,3) to (3,0);
-    \draw (-3,-0.5) node {$-4\pi\times10^3$};
-    \draw (3,-0.5) node {$4\pi\times10^3$};
-    \draw (0,5.5) node {$X_{1}\brak{f}$};
 
-\end{circuitikz}
 
-\begin{circuitikz}
-    \draw[->] (-5,0) to (5,0);
-    \draw[->] (0,-1) to (0,5);
-    \draw (-3,0) to (0,3);
-    \draw (0,3) to (3,0);
-    \draw (-3,-0.5) node {$-4\pi\times10^3$};
-    \draw (3,-0.5) node {$4\pi\times10^3$};
-    \draw (0,5.5) node {$X_{2}\brak{f}$};
-\end{circuitikz}
- From figure ,
- \begin{align}
-     y\brak{t}=x_1\brak{t}*cos\brak{4\pi\times10^3t}+x_2\brak{t}*cos\brak{12\pi\times10^3t}\\
-	 Y\brak{f}=X_1\brak{f}\pi[\delta\brak{2\pi f-4\pi\times10^3}+\delta\brak{2\pi f+4\pi\times10^3}]+\\
-	           X_2\brak{f}\pi[\delta\brak{2\pi f-12\pi\times10^3}+\delta\brak{2\pi f+12\pi\times10^3}]\nonumber
+\begin{figure}[ht]
+    \centering
+	
+    \input{figs/X_1.tex}
+	
+    \label{fig:EC50.2}
+\end{figure} 
+
+
+\begin{figure}[ht]
+    \centering
+	
+    \input{figs/X_2.tex}
+	
+    \label{fig:EC50.3}
+\end{figure} 
+
+ From question figure ,
+\begin{align}
+y\brak{t}=x_1\brak{t}\times cos\brak{4\pi\times10^3t}+x_2\brak{t}\times cos\brak{12\pi\times10^3t}
 \end{align}
+\begin{align}
+	y\brak{t}=y_1\brak{t}+y_2\brak{t}\\
+	Y\brak{f}=Y_1\brak{f}+Y_2\brak{f}\label{1}
+\end{align}
+\begin{align}
+	Y_1\brak{f}&=X_1\brak{f}*\frac{1}{2}[\delta\brak{f-f_1}+\delta\brak{f+f_1}]\\
+	      &=\frac{1}{2}[X_1\brak{f-f_1}+X_1\brak{f+f_1}]
+\end{align}
+\begin{figure}[ht]
+    \centering
+	
+    \input{figs/Y_1.tex}
+	
+    \label{fig:EC50.4}
+\end{figure} 
 
- \begin{circuitikz}
-    \draw[->] (-5,0) to (5,0);
-    \draw[->] (0,-1) to (0,5);
-    \draw (-4,0) to (-3,2);
-    \draw (-3,2) to (-2,0);
-    \draw (-2,0) to (-1,2);
-    \draw (-1,2) to (0,0);
-    \draw (0,0) to (1,2);
-    \draw (1,2) to (2,0);
-    \draw (2,0) to (3,2);
-    \draw (3,2) to (4,0);
-    \draw (-2,-0.5) node {$-8\pi\times10^3$};
-    \draw (2,-0.5) node {$8\pi\times10^3$};
-    \draw (4,-0.5) node {$16\pi\times10^3$};
-    \draw (-4,-0.5) node {$-16\pi\times10^3$};
-    \draw (0,5.5) node {$Y\brak{f}$};
-\end{circuitikz}
-\begin{center}
-    y\brak{t} in frequency domain
-\end{center}
+\begin{align}
+	Y_2\brak{f}&=X_2\brak{f}*\frac{1}{2}[\delta\brak{f-f_2}+\delta\brak{f+f_2}]\\ 
+	&=\frac{1}{2}[X_2\brak{f-f_2}+X_2\brak{f+f_2}]
+\end{align}
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+	
+    \input{figs/Y_2.tex}
+	
+    \label{fig:EC50.5}
+\end{figure} 
+
+From \eqref{1}:
+\begin{figure}[ht]
+    \centering
+	
+    \input{figs/Y.tex}
+	
+    \label{fig:EC50.6}
+\end{figure} 
+
+From table,
 \begin{align}
 \omega_{m}=16\pi\times10^3 rad/sec.
 \end{align}
