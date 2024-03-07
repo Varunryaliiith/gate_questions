@@ -96,10 +96,14 @@ Using Contour Integration to find the inverse $Z$-transform,
     q\brak{x-1}&=\frac{1}{2\pi j}\oint_{C}Q(z) \;z^{x-2} \;dz  \\
     &=\frac{1}{2\pi j}\oint_{C}\frac{z^{x-2}}{x^2\brak{1-z^{-1}}^{3}} \;dz 
 \end{align}
+From Cauchy's residue theorem,
+\begin{align}
+    \oint_{C}f(z)\;dz &= 2\pi i\sum R_j \\
+R&=\frac{1}{\brak {m-1}!}\lim\limits_{z\to a}\frac{d^{m-1}}{dz^{m-1}}\brak {{(z-a)}^{m}f\brak z} 
+\end{align}
 We can observe that the pole is repeated $3$ times and thus $m=3$,
 \begin{align}
-    R&=\frac{1}{\brak {m-1}!}\lim\limits_{z\to a}\frac{d^{m-1}}{dz^{m-1}}\brak {{(z-a)}^{m}f\brak z} \\
-    R&=\frac{1}{\brak {2}!}\lim\limits_{z\to 1}\frac{d^{2}}{dz^{2}}\brak {{(z-1)}^{3}\frac{z^{x+1}}{x^2\brak{z-1}^3}} \\
+R&=\frac{1}{\brak {2}!}\lim\limits_{z\to 1}\frac{d^{2}}{dz^{2}}\brak {{(z-1)}^{3}\frac{z^{x+1}}{x^2\brak{z-1}^3}} \\
     R&=\frac{1}{\brak {2}!}\lim\limits_{z\to 1}\frac{d^{2}}{dz^{2}} \frac{z^{x+1}}{x^2} \\
     R&=\frac{1}{2}\frac{\brak{x+1}\brak{x}}{x^2} 
 \end{align}
