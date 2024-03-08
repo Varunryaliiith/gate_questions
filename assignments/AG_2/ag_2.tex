@@ -70,7 +70,7 @@ If x is an integer with  x$>$1, the solution of
 
 \begin{table}[h]
     \centering
-\input{tables/table.tex}
+   \input{tables/table.tex}
  \caption{Table of parameters}
     \label{tab:AG.2.1}
 \end{table}
@@ -80,8 +80,9 @@ From table ,
 	P\brak{z}=\frac{1}{x^2}\sum_{n=-\infty}^{n=\infty}\brak{n+1}u\brak{n}z^{-n} \label{AG.2.1}
 \end{align}
 \begin{align}
-	n u\brak{n}\xleftrightarrow{\mathcal{Z}} \frac{z^{-1}}{\brak{1-z^{-1}}^2} ,   \abs{z} >1 \\
-   u\brak{n}\xleftrightarrow{\mathcal{Z}} \frac{1}{\brak{1-z^-1}} ,   \abs{z} >1  
+	n^2 u\brak{n}\xleftrightarrow{\mathcal{Z}} \frac{z^{-1}\brak{z^{-1}+1}}{\brak{1-z^{-1}}^3} ,  \abs{z} > 1 \label{ag.2.1}\\
+	n u\brak{n}\xleftrightarrow{\mathcal{Z}} \frac{z^{-1}}{\brak{1-z^{-1}}^2} ,   \abs{z} >1 \label{ag.2.2}\\
+   u\brak{n}\xleftrightarrow{\mathcal{Z}} \frac{1}{\brak{1-z^-1}} ,   \abs{z} >1  \label{ag.2.3}
 \end{align}
 From \eqref{AG.2.1}
 \begin{align}
@@ -91,25 +92,21 @@ From \eqref{AG.2.1}
 	&=\brak{\frac{1}{x^2}\frac{1}{({1-z^{-1})}^{2}}}\brak{\frac{1}{1-z^{-1}}}  \\
 	 &=\frac{1}{x^2}\frac{1}{({1-z^{-1})}^{3}} ,\quad \abs{z}>1
 \end{align}
-Using Contour Integration to find the inverse $Z$-transform,
+
+Using $Z$-transform pairs \eqref{ag.2.1} ,\eqref{ag.2.2} ,\eqref{ag.2.3} to find the inverse $Z$-transform,
 \begin{align}
-    q\brak{x-1}&=\frac{1}{2\pi j}\oint_{C}Q(z) \;z^{x-2} \;dz  \\
-    &=\frac{1}{2\pi j}\oint_{C}\frac{z^{x-2}}{x^2\brak{1-z^{-1}}^{3}} \;dz 
+	\frac{1}{\brak{1-z^{-1}}^{3}} = \frac{1}{\brak{1-z^{-1}}}+\frac{3z^{-1}}{2\brak{1-z^{-1}}^2}+\frac{z^{-1}\brak{z^{-1}+1}}{2\brak{1-z^{-1}}^3}
 \end{align}
-From Cauchy's residue theorem,
 \begin{align}
-    \oint_{C}f(z)\;dz &= 2\pi i\sum R_j \\
-R&=\frac{1}{\brak {m-1}!}\lim\limits_{z\to a}\frac{d^{m-1}}{dz^{m-1}}\brak {{(z-a)}^{m}f\brak z} 
-\end{align}
-We can observe that the pole is repeated $3$ times and thus $m=3$,
-\begin{align}
-R&=\frac{1}{\brak {2}!}\lim\limits_{z\to 1}\frac{d^{2}}{dz^{2}}\brak {{(z-1)}^{3}\frac{z^{x+1}}{x^2\brak{z-1}^3}} \\
-    R&=\frac{1}{\brak {2}!}\lim\limits_{z\to 1}\frac{d^{2}}{dz^{2}} \frac{z^{x+1}}{x^2} \\
-    R&=\frac{1}{2}\frac{\brak{x+1}\brak{x}}{x^2} 
+	q\brak{n}&=\frac{1}{x^2}\brak{\frac{n^2}{2}+\frac{3n}{2}+1} \\
+	&=\frac{1}{x^2}\frac{\brak{n+1}\brak{n+2}}{2}
+ \end{align}
+ put $n=x-1$ to obtain the sum of first x terms
+ \begin{align}
+	q\brak{x-1}&=\frac{1}{x^2}\frac{\brak{x}\brak{x+1}}{2} 
 \end{align}
 \begin{align}
     \lim_{x\to\infty}q\brak{x-1}=\frac{1}{2}
 \end{align}
 Hence , option \brak{B} is correct.
 \end{document}
-
