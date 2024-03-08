@@ -90,13 +90,14 @@ From \eqref{AG.2.1}
 	q\brak{n}&=p\brak{n}\ast u\brak{n}\\
 	\implies Q\brak{z}&=P\brak{z}U\brak{z}   \\
 	&=\brak{\frac{1}{x^2}\frac{1}{({1-z^{-1})}^{2}}}\brak{\frac{1}{1-z^{-1}}}  \\
-	 &=\frac{1}{x^2}\frac{1}{({1-z^{-1})}^{3}} ,\quad \abs{z}>1
+	 &=\frac{1}{x^2}\frac{1}{({1-z^{-1})}^{3}} ,\quad \abs{z}>1 \label{ag.2.4}
 \end{align}
 
 Using $Z$-transform pairs \eqref{ag.2.1} ,\eqref{ag.2.2} ,\eqref{ag.2.3} to find the inverse $Z$-transform,
 \begin{align}
-	\frac{1}{\brak{1-z^{-1}}^{3}} = \frac{1}{\brak{1-z^{-1}}}+\frac{3z^{-1}}{2\brak{1-z^{-1}}^2}+\frac{z^{-1}\brak{z^{-1}+1}}{2\brak{1-z^{-1}}^3}
+	\frac{1}{\brak{1-z^{-1}}^{3}} = \frac{1}{\brak{1-z^{-1}}}+\frac{3z^{-1}}{2\brak{1-z^{-1}}^2}+\frac{z^{-1}\brak{z^{-1}+1}}{2\brak{1-z^{-1}}^3} \label{ag.2.5}
 \end{align}
+From equations \eqref{ag.2.4} ,\eqref{ag.2.5}
 \begin{align}
 	q\brak{n}&=\frac{1}{x^2}\brak{\frac{n^2}{2}+\frac{3n}{2}+1} \\
 	&=\frac{1}{x^2}\frac{\brak{n+1}\brak{n+2}}{2}
